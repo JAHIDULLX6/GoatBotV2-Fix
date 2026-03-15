@@ -1,11 +1,11 @@
 // Set bash title
-process.stdout.write("\x1b]2;Goat Bot V2 - Made by NTKhang\x1b\x5c");
+process.stdout.write("\x1b]2;Goat Bot V2 - Made by SaGor\x1b\x5c");
 
 const gradient = require("gradient-string");
 const axios = require("axios");
 const path = require("path");
 const fs = require("fs-extra");
-const login = require(`${process.cwd()}/fb-chat-api`);
+const login = require("sagor-nx-fca");
 
 const { writeFileSync, readFileSync, existsSync, watch } = fs;
 const handlerWhenListenHasError = require("./handlerWhenListenHasError.js");
@@ -41,19 +41,19 @@ function centerText(text, length) {
 // Logo
 const titles = [
   [
-    " ██████╗  ██████╗  █████╗ ████████╗    ██████╗  ██████╗ ████████╗    ██╗   ██╗██████╗  ",
-    "██╔════╝ ██╔═══██╗██╔══██╗╚══██╔══╝    ██╔══██╗██╔═══██╗╚══██╔══╝    ██║   ██║╚════██╗ ",
-    "██║  ███╗██║   ██║███████║   ██║       ██████╔╝██║   ██║   ██║       ██║   ██║ █████╔╝ ",
-    "██║   ██║██║   ██║██╔══██║   ██║       ██╔══██╗██║   ██║   ██║       ╚██╗ ██╔╝██╔═══╝  ",
-    "╚██████╔╝╚██████╔╝██║  ██║   ██║       ██████╔╝╚██████╔╝   ██║        ╚████╔╝ ███████╗ ",
-    " ╚═════╝  ╚═════╝ ╚═╝  ╚═╝   ╚═╝       ╚═════╝  ╚═════╝    ╚═╝         ╚═══╝  ╚══════╝ ",
+      "░██████╗░█████╗░░██████╗░░█████╗░██████╗░",
+      "██╔════╝██╔══██╗██╔════╝░██╔══██╗██╔══██╗",
+      "╚█████╗░███████║██║░░██╗░██║░░██║██████╔╝",
+      "░╚═══██╗██╔══██║██║░░╚██╗██║░░██║██╔══██╗",
+      "██████╔╝██║░░██║╚██████╔╝╚█████╔╝██║░░██║",
+      "╚═════╝░╚═╝░░╚═╝░╚═════╝░░╚════╝░╚═╝░░╚═╝",
   ],
   [
-    "█▀▀ █▀█ ▄▀█ ▀█▀  █▄▄ █▀█ ▀█▀  █░█ ▀█",
-    "█▄█ █▄█ █▀█ ░█░  █▄█ █▄█ ░█░  ▀▄▀ █▄",
+      "█▀ ▄▀█ █▀▀ █▀█ █▀█",
+      "▄█ █▀█ █▄█ █▄█ █▀▄",
   ],
-  ["G O A T   B O T   V 2 @" + currentVersion],
-  ["GOATBOT V2"],
+  ["S A G O R   B O T   V 2 @" + currentVersion],
+  ["SAGOR BOT V2"],
 ];
 const maxWidth = process.stdout.columns;
 const title =
@@ -68,7 +68,7 @@ for (const text of title) {
   centerText(gradient("#FA8BFF", "#2BD2FF", "#2BFF88")(text), text.length);
 }
 
-const subTitle = "GoatBot V2.5 Unofficials - A simple Bot chat messenger use personal account";
+const subTitle = "SaGor Bot V3- A simple Bot chat messenger use personal account";
 const subTitleArray = [];
 let tempSub = subTitle;
 if (subTitle.length > maxWidth) {
@@ -82,14 +82,14 @@ if (subTitle.length > maxWidth) {
 } else {
   subTitleArray.push(subTitle);
 }
-const author = "Created by NTKhang with ♡";
-const srcUrl = "Source code: https://github.com/ntkhang03/Goat-Bot-V2";
+const author = "Created by SaGor ♡";
+const fbUrl = "https://facebook.com/SAGOR.69x";
 const fakeRelease = "ALL VERSIONS NOT RELEASED HERE ARE FAKE";
 for (const t of subTitleArray) {
   centerText(gradient("#9F98E8", "#AFF6CF")(t), t.length);
 }
 centerText(gradient("#9F98E8", "#AFF6CF")(author), author.length);
-centerText(gradient("#9F98E8", "#AFF6CF")(srcUrl), srcUrl.length);
+centerText(gradient("#9F98E8", "#AFF6CF")(fbUrl), fbUrl.length);
 centerText(gradient("#f5af19", "#f12711")(fakeRelease), fakeRelease.length);
 
 let widthConsole = process.stdout.columns;
@@ -256,7 +256,7 @@ async function startBot() {
         log.info("BOT ID", `${global.botID} - ${await getName(global.botID)}`);
         log.info("PREFIX", global.GoatBot.config.prefix);
         log.info("LANGUAGE", global.GoatBot.config.language);
-        log.info("BOT NICK NAME", global.GoatBot.config.nickNameBot || "GOAT BOT");
+        log.info("BOT NICK NAME", global.GoatBot.config.nickNameBot || "SAGOR BOT");
 
         // Removed FCA options visibility log
 
@@ -458,7 +458,7 @@ async function startBot() {
         log.master("LOAD TIME", `${convertTime(Date.now() - global.GoatBot.startTime)}`);
         logColor("#f5ab00", createLine("COPYRIGHT"));
         console.log(
-          `\x1b[1m\x1b[33mCOPYRIGHT:\x1b[0m\x1b[1m\x1b[37m \x1b[0m\x1b[1m\x1b[36mProject GoatBot v2 created by ntkhang03 (https://github.com/ntkhang03), please do not sell this source code or claim it as your own. Thank you!\x1b[0m`
+          `\x1b[1m\x1b[33mCOPYRIGHT:\x1b[0m\x1b[1m\x1b[37m \x1b[0m\x1b[1m\x1b[36m you are using Project SaGor Bot v 2 Thank you!\x1b[0m`
         );
         logColor("#f5ab00", character);
         global.GoatBot.config.adminBot = adminBot;
