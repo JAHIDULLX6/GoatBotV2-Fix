@@ -701,12 +701,15 @@ module.exports = function (api, threadModel, userModel, globalModel, usersData, 
 					};
 				}
 
-				command.onEvent({
-					...parameters,
-					args,
-					commandName,
-					getLang: getText2
-				})
+				if (typeof command.onEvent !== "function")
+  continue;
+
+command.onEvent({
+  ...parameters,
+  args,
+  commandName,
+  getLang: getText2
+})
 					.then(async (handler) => {
 						if (typeof handler == "function") {
 							try {
